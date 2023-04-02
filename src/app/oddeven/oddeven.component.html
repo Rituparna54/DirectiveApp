@@ -1,0 +1,28 @@
+<table border="1">
+    <tr>
+      <th>Odd</th>
+      <th>Even</th>
+    </tr>
+    <ng-container *ngFor="let num of numbers;let ind = index;">
+    <tr *ngIf="num % 2 === 1">
+      <td>{{numbers[ind]}}</td>
+      <td>{{numbers[ind + 1]}}</td>    
+    </tr>
+    </ng-container>
+  </table>
+  
+  <div>
+    <span *ngFor="let i of numbers">
+    <span *ngIf="i%2==0;then c1 else c2">
+       Condition is valid
+    </span>
+    <ng-template #c1>
+        {{i}} is even 
+        <br>
+    </ng-template>
+    <ng-template #c2>
+        {{i}} is odd
+        <br>
+    </ng-template>
+</span>
+  </div>
